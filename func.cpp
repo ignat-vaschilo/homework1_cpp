@@ -1,4 +1,5 @@
 #include "func.h"
+#include <iostream>
 
 using namespace std;
 
@@ -23,6 +24,7 @@ void writeFile(int x) {
     }
 
     unsigned char off = rand() % (256 - (x+10) + 1);
+    std::cout << "off = " << (int)off << endl;
     file.write((char*)&off, sizeof(char));
 
     writeRandomBytes(file, off-1);
